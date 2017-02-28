@@ -19,7 +19,7 @@ makeVector <- function(x = numeric()) {
         if(!is.null(m)) {
                 message("getting cached data")
                 return(m)
-        }
+                }
         data <- x$get()
         m <- mean(data, ...)
         x$setmean(m)
@@ -31,7 +31,7 @@ makeVector <- function(x = numeric()) {
         set <- function(y) {
                 x <<- y
                 inv <<- NULL
-        }
+                }
         get <- function() x
         setInverse <- function(inverse) inv <<- inverse
         getInverse <- function() inv
@@ -39,7 +39,7 @@ makeVector <- function(x = numeric()) {
              get = get,
              setInverse = setInverse,
              getInverse = getInverse)
-}
+             }
 
 
 
@@ -55,5 +55,5 @@ cacheSolve <- function(x, ...) {
         inv <- solve(mat, ...)
         x$setInverse(inv)
         inv
-}
+        }
 
